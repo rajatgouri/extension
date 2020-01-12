@@ -1,0 +1,54 @@
+.sec img {
+    max-width: 55px;
+}
+
+.boxed.userhome .container {
+    padding: 0;
+}
+
+ul.folder-ul {
+    list-style: none;
+    padding: 0;
+}
+
+.addfolder {
+    width: 25%;
+    text-align: center;
+}
+
+ul.folder-ul li {
+    width: 25%;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.sec {
+    padding: 20px 15px 0px;
+}
+
+h2.title {
+    font-size: 16px;
+    padding: 10px 12px;
+    background: #f4f4f4;
+    text-transform: uppercase;
+}
+
+ul.folder-ul li a {
+    display: inline-block;
+}
+
+ul.folder-ul li p {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+a.backk {
+    display: none !important;
+}
+
+.sec:last-child {
+    margin-bottom: 40px;
+}
+

@@ -1,0 +1,71 @@
+<div class="boxed dash">
+	<div class="container">
+		<app-adminheader></app-adminheader>
+		<div class="content">
+			<div class="sec sec1">
+				<form #addressForm="ngForm" (ngSubmit)="submit()">
+					<div class="row">
+						<div class="form-group col-lg-12">
+							<label>Folder Name</label>
+							<input type="text" [disabled]="folderMode == 'edit'" name="foldername" [(ngModel)]="foldername" placeholder="folder name"
+								class="form-control">
+						</div>
+						<div class="col-lg-5 text-secondary">
+							<h5>User Name :</h5>
+						</div>
+						<div class="col-lg-6 text-secondary">
+							<h5>Permissions :</h5>
+						</div>
+						<a (click)="add()" tooltip="Add Row" placement="top" class="text-secondary"><i
+							class="fa fa-plus-circle" aria-hidden="true"></i></a>
+						<ng-container *ngFor="let number of arrayValue;let i=index">
+							<div class="form-group col-lg-3 add_folder">
+								<ngx-select-dropdown name="select_{{i}}" (change)="selectionChanged($event)"
+									[config]="config" [options]="dropdownOptions" [(ngModel)]="number.dataModel"
+									[multiple]="false">
+								</ngx-select-dropdown>
+							</div>
+							<div class="col-lg-2">
+								<label class="checkbox">Create
+									<input [(ngModel)]="number.create" name="create_{{i}}" id="create" type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="col-lg-2">
+								<label class="checkbox">Read
+									<input [(ngModel)]="number.read" name="read_{{i}}" id="read" type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="col-lg-2">
+								<label class="checkbox">Update
+									<input [(ngModel)]="number.update" name="update_{{i}}" id="update" type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="col-lg-2">
+								<label class="checkbox">Delete
+									<input [(ngModel)]="number.delete" name="delete_{{i}}" id="delete" type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="col-xs-1 plus_minus">
+								<a (click)="remove(i,arrayValue)" tooltip="Remove Row" placement="top"
+									class="text-secondary"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+							</div>
+						</ng-container>
+						<div class="col-lg-12 bottom_margin">
+							<div class="clo-lg-4 float-right">
+								<button (click)="cancel()" class="cancel">Cancel</button>
+							</div>
+							<div class="clo-lg-4 mr-4 float-right">
+								<button type="submit" class="submit">Save</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<app-footerbar></app-footerbar>
+	</div>
+</div>

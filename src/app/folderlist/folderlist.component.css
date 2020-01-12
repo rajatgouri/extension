@@ -1,0 +1,49 @@
+.list-custom-ang {
+    padding: 0 20px;
+}
+
+.list-custom-ang input {
+    font-size: 10px;
+    padding: 0 10px;
+    height: 26px;
+}
+
+.plus-custom-ang{
+    margin-top: 17px;
+}
+
+.plus-custom-ang i {
+    font-size: 17px;
+    padding: 0;
+}
+
+.table.table-condensed th {
+    font-size: 11px;
+}
+
+.table.table-condensed td {
+    font-size: 10px;
+}
+
+.hompage i {
+    font-size: 13px;
+}
+
+a.hompage[_ngcontent-rjt-c3] {
+    height: 25px;
+    padding: 0px;
+    width: 25px;
+}
+
+a.hompage{
+    padding: 0px;
+    width: 25px;
+    height: 25px;
+}
+
+.content {
+    min-height: 294px!important;
+    /* overflow: scroll!important; */
+    max-height: 550px!important;
+}
+

@@ -1,0 +1,105 @@
+<div class="boxed adduser">
+	<div class="container">
+		<app-adminheader></app-adminheader>
+		<div class="content">
+			<div class="sec sec1">
+				<form #addressForm="ngForm" (ngSubmit)="submit()">
+					<div class="row">
+						<div class="form-group col-lg-6">
+							<input type="text" (blur)="blur1()" (focus)="focus1()" name="firstName"
+								[(ngModel)]="details.firstName" placeholder="first name" class="form-control">
+						</div>
+						<div class="form-group col-lg-6">
+							<input type="text" (blur)="blur2()" (focus)="focus2()" name="lastName"
+								[(ngModel)]="details.lastName" placeholder="last name" class="form-control">
+						</div>
+						<div class="form-group col-lg-12">
+							<input type="text" name="email" [disabled]="userMode == 'edit'" [(ngModel)]="details.email" placeholder="email@gmail.com" class="form-control">
+						</div>
+						<div class="form-group col-lg-12 dark_input">
+							<input type="text" disabled tabindex="-1" name="fullname" [(ngModel)]="details.fullname"
+								placeholder="full name" class="form-control">
+						</div>
+						<div class="col-lg-5 text-info">
+							<h5>Folder Name :</h5>
+						</div>
+						<div class="col-lg-6 text-info">
+							<h5>Permissions :</h5>
+						</div>
+						<a (click)="add()" tooltip="Add Row" placement="top" class="text-secondary"><i
+								class="fa fa-plus-circle" aria-hidden="true"></i></a>
+						<ng-container *ngFor="let number of arrayValue;let i=index">
+							<div class="form-group col-lg-3 add_dropdown">
+								<ngx-select-dropdown name="select_{{i}}" (change)="selectionChanged($event)"
+									[config]="config" [options]="dropdownOptions" [(ngModel)]="number.dataModel"
+									[multiple]="false">
+								</ngx-select-dropdown>
+							</div>
+							<div class="col-lg-2">
+								<label class="checkbox">Create
+									<input [(ngModel)]="number.create" name="create_{{i}}" id="create" type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="col-lg-2">
+								<label class="checkbox">Read
+									<input [(ngModel)]="number.read" name="read_{{i}}" id="read" type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="col-lg-2">
+								<label class="checkbox">Update
+									<input [(ngModel)]="number.update" name="update_{{i}}" id="update" type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="col-lg-2">
+								<label class="checkbox">Delete
+									<input [(ngModel)]="number.delete" name="delete_{{i}}" id="delete" type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="col-xs-1 plus_minus">
+								<a (click)="remove(i,arrayValue)" tooltip="Remove Row" placement="top"
+									class="text-secondary"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+							</div>
+						</ng-container>
+						<div class="col-lg-12 left_margin">
+							<label class="checkbox">Here you want to give permission to create group
+								<input [(ngModel)]="userPermissions.permissionToCreateGroup" name="permissionToCreateGroup"
+									id="permissionToCreateGroup" type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="col-lg-12 left_margin">
+							<label class="checkbox">This user is created by admin
+								<input [(ngModel)]="userPermissions.createdByAdmin" name="createdByAdmin" id="createdByAdmin"
+									type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="col-lg-12 left_margin">
+							<label class="checkbox">Here you want to give permission to user to create new folder
+								<input [(ngModel)]="userPermissions.createNewFolder" name="createNewFolder" id="createNewFolder"
+									type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+					<div class="col-lg-12 bottom_margin">
+						<div class="clo-lg-4 float-right">
+							<button (click)="cancel()" class="cancel">Cancel</button>
+						</div>
+						<div *ngIf="userMode == 'add'" class="clo-lg-4 mr-4 float-right">
+							<button type="submit" class="submit">Save</button>
+						</div>
+						<div *ngIf="userMode == 'edit'" class="clo-lg-4 mr-4 float-right">
+							<button type="submit" class="btn btn-success">Update</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<app-footerbar></app-footerbar>
+	</div>
+</div>

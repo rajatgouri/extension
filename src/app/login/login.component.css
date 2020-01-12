@@ -1,0 +1,105 @@
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo p {
+    margin: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #27bdff;
+}
+
+.col-md-6 h4 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.createAcc p {
+    font-size: 12px;
+    margin: 15px 0px;
+}
+
+.col-md-6.signin {
+    border-left: 1px solid #e3e3e3;
+}
+
+.form-control {
+    background: #f8f8f8;
+    font-size: 12px;
+    height: 40px;
+    border-radius: 1px;
+}
+
+button.col-md-12.btn.btn-primary {
+    padding: 8px;
+}
+
+.signin hr {
+    width: 100%;
+    float: left;
+    background: #e3e3e3;
+}
+
+.googlesign {
+    background: #fe3c3c;
+    border: 1px solid #fe3c3c;
+}
+
+.googlesign:hover {
+    background: #e31a1a;
+    border: 1px solid #e31a1a;
+}
+
+.boxed.login .container .col-md-6 {
+    float: none;
+}
+
+.boxed.login .container .col-md-6 {
+    width: 50%;
+    margin-bottom: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.fpass {
+    text-align: center;
+    margin: 8px 0 10px;
+    display: block;
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.fpass button {
+    font-size: 10px;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: #f8f8f8;
+    padding: 0 5px;
+    z-index: 6;
+    position: relative;
+    border: none;
+}
+
+.fpass button::focus {
+    box-shadow: none;
+    border: none;
+}
+
+.fpass:before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 1px;
+    background: #ccc;
+    left: 0;
+    top: 14px;
+    z-index: 0;
+}

@@ -1,0 +1,54 @@
+.userlist .container {
+    padding: 0;
+}
+
+.sec {
+    padding: 20px 15px;
+}
+
+.adduser {
+    padding: 7px 10px;
+    background: #ffeda3;
+    margin-bottom: 10px;
+}
+
+.singleuser:nth-child(odd) {
+    background: #fff2f2;
+}
+
+.singleuser:nth-child(even) {
+    background: #eeeeee;
+}
+
+.singleuser {
+    display: block;
+    padding: 0 10px 2px;
+    margin: 5px 0;
+}
+
+.singleuser span {
+    display: inline-block;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: 600;
+    line-height: initial;
+}
+
+span.uname {
+    margin-right: 5px;
+}
+
+.allusers {
+    border-top: 1px solid #1a1a1a;
+    padding-top: 4px;
+    padding-bottom: 20px;
+}
+
+.adduser a {
+    width: 100%;
+    display: block;
+    line-height: initial;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: bold;
+}

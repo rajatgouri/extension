@@ -1,0 +1,49 @@
+<div class="boxed adduser">
+    <div class="container">
+        <div class="content">
+        <ngx-spinner bdOpacity=0.9 bdColor="rgba(51,51,51,0.3)" size="medium" color="#f6cb1e" type="square-spin"
+            [fullScreen]="true">
+            <p style="color: white"> Loading... </p>
+        </ngx-spinner>
+        <app-adminheader></app-adminheader>
+        <div class="list-custom-ang">
+            <div class="form-group">
+                <input type="text" name="Search" placeholder="Search" class="form-control" [(ngModel)]="Search">
+            </div>
+            <div class="form-group second-cu-ang folder_list">
+                <ngx-select-dropdown (change)="selectionChanged($event)" [config]="config" [options]="dropdownOptions"
+                    [(ngModel)]="dataModel" [multiple]="false"></ngx-select-dropdown>
+            </div>
+            <div class="plus-custom-ang">
+                <a (click)="addFolder()" tooltip="Add Folder" placement="top" class="text-secondary"><i
+                        class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div>
+            <table class="table table-condensed">
+                <thead style="text-align: center;">
+                    <tr>
+                        <th>Folder name</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody style="text-align: center;">
+                    <ng-container *ngFor="let folder of folderList| filter : Search | search:dataModel;let i=index">
+                        <tr>
+                            <td>{{folder.foldername}}</td>
+                            <td><a [routerLink]="" (click)="editFolder('edit',folder)"
+                                    tooltip="Click to edit the folder"><i class="fa fa-pencil-square-o"
+                                        aria-hidden="true"></i></a></td>
+                            <td><a [routerLink]="" (click)="delete(folder)"
+                                    tooltip="Click to delete the folder"><i class="fa fa-trash"
+                                        aria-hidden="true"></i></a></td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+        <app-footerbar></app-footerbar>
+        </div>
+    </div>
+</div>

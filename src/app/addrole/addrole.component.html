@@ -1,0 +1,37 @@
+<div class="boxed addrole">
+  <div class="container">
+    <app-adminheader></app-adminheader>
+  	<div class="content">
+  	  <div class="sec sec1">  	  	
+	  	<!-- Form starts -->
+		<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+			<div class="col-md-12">
+		      <label>Role</label>
+			  <input type="text" class="form-control" id="addrole" placeholder="Role">
+			</div>
+		   <!-- Permission -->
+		    <div class="col-md-12">
+		      <label>Permission</label>
+		      <div class="col-md-6">
+		        <input id="Read" type="radio" class="custom-control-input" value="Read" name="Access" formControlName="Access">
+		        <label class="custom-control-label" for="Read">Read</label>
+		      </div>
+
+		      <div class="col-md-6">
+		        <input id="Write" type="radio" class="custom-control-input" value="Write" name="Access" formControlName="Access">
+		        <label class="custom-control-label" for="Write">Write</label>
+		      </div>
+		    </div>
+
+		   <div *ngIf="isSubmitted && myForm.invalid">
+		      <p>Please select either value</p>
+		   </div>
+
+		   <!-- Submit Button -->
+		   <button type="submit">Submit</button>
+		</form><!-- Form ends --> 
+  	  </div>
+    </div>
+    <app-footerbar></app-footerbar>
+  </div>
+</div>

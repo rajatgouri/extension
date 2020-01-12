@@ -1,0 +1,62 @@
+.register button.col-md-12.btn.btn-primary {
+    width: calc(100% - 10px);
+    margin: 6px 5px;
+    height: 42px;
+    float: none;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    background: #f8f8f8;
+    font-size: 12px;
+    height: 40px;
+    border-radius: 1px;
+    border: 1px solid #a4a4a4;
+}
+
+.form-group label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #606060;
+}
+
+.boxed.register .container .col-md-6 {
+    float: left;
+    margin-bottom: 10px;
+}
+
+.boxed.register .container {
+    width: 460px;
+}
+
+.form-control::placeholder {
+    color: #757575;
+    font-size: 10px;
+    letter-spacing: 0px;
+}
+
+.register form {
+    text-align: left;
+}
+
+.register .container {
+    text-align: center;
+}
+
+button.ahacc.btn.btn-primary {
+    background-color: transparent !important;
+    color: #000 !important;
+    padding: 0;
+    border: none;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.register button.col-md-12.btn.btn-primary:focus {
+    box-shadow: none;
+}

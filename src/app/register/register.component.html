@@ -1,0 +1,56 @@
+
+<div class="boxed register">
+  <div class="container">
+  	<div class="logo">
+  	  <h2>LOGO</h2>
+  	  <p>Welcome to TeamSOW Bookmarks</p>
+  	</div>
+  	<div *ngIf="msg">
+  		<span class="label" [ngClass]="msg_class">{{showmsg}}</span>
+  	</div>
+  	<form [formGroup]="signupForm" (ngSubmit) = "signUp(signupForm.value)"> 
+	  <div class="form-row">
+		<div class="form-group col-md-6">
+		  <label>First Name *</label>
+		  <span class="fuser-name">
+		  	<input type="text" formControlName="firstName" autocomplete="off" class="form-control" id="UserFn" placeholder="First Name" required>
+		  </span>
+		</div>
+		<div class="form-group col-md-6">
+		  <label>Last Name *</label>
+		  <span class="luser-name">
+		  	<input type="text" formControlName="lastName" autocomplete="off" class="form-control" id="Userls" placeholder="Last Name" required>
+		  </span>
+		</div>
+		<div class="form-group col-md-6">
+		  <label>Company Name</label>
+		  <span class="companyname">
+		  	<input type="text" formControlName="company" autocomplete="off" class="form-control" id="comp" placeholder="Company Name">
+		  </span>
+		</div>
+		<div class="form-group col-md-6">
+		  <label>Email *</label>
+		  <span class="emailadd">
+		  	<input type="Email" formControlName="email" autocomplete="off" class="form-control" id="useremail" placeholder="Email" required>
+		  </span>
+		</div>
+		<div class="form-group col-md-6">
+		  <label>New Password *</label>
+		  <span class="new-pass">
+		 	<input type="password" formControlName="setpassword" autocomplete="off" id="newpass" class="form-control" placeholder="New Password" required>
+		  </span>
+		</div>
+		<div class="form-group col-md-6">
+		  <label>Confirm Password *</label>
+		  <span class="confirm-pass">
+		 	<input type="password" formControlName="confirmPass" autocomplete="off" id="confirmpass" class="form-control" placeholder="Confirm Password" required>
+		  </span>
+		</div>
+	  </div>
+	  
+	  <button [disabled]="!signupForm.valid"  class="col-md-12 btn btn-primary">Register</button>
+	</form>
+	<button (click)="signin()" class="btn btn-primary">Already have an account! Login.</button>
+
+  </div>
+</div>		

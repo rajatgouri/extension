@@ -1,0 +1,55 @@
+<div class="boxed login">
+	<div class="container">
+		<div class="logo">
+			<h2>LOGO</h2>
+			<p>Welcome to TeamSOW Bookmarks</p>
+		</div>
+		<div class="col-md-12">
+			<div class="col-md-6 createAcc">
+				<h4>Create An Account</h4>
+				<button (click)="gosign()" class="btn btn-primary">Sign-up with Email</button>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+					industry's standard dummy text</p>
+			</div>
+			<div class="col-md-6 signin">
+				<h4>Signin</h4>
+				<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+					<div class="form-row">
+						<div class="form-group col-md-12">
+							<span class="user-email">
+								<input type="text" formControlName="username" class="form-control" autocomplete="off"
+									id="usernames" placeholder="Email">
+							</span>
+						</div>
+						<div class="form-group col-md-12">
+							<span class="user-pass">
+								<input type="password" class="form-control" id="passwords" autocomplete="off"
+									formControlName="password" placeholder="Password">
+							</span>
+						</div>
+					</div>
+					<button class="col-md-12 btn btn-primary">Login</button>
+				</form>
+				<input type="checkbox" name="Remember" id="Rememberme" value="Remember me">
+				<label for="Rememberme" class="checkbox-inline" style="font-size: 13px;margin-left: 7px;font-weight: 500;">Remember me</label>
+				<div class="fpass"><button (click)="forgot()" class="btn btn-primary">Forget Password</button></div>
+				<button class="btn googlesign btn-primary col-md-12" (click)="signInWithGoogle()">Signin With
+					Google</button>
+			</div>
+		</div>
+<!-- 		<div *ngIf="user" class="card text-center">
+			<h6 class="card-header">
+				Social Login Demo
+			</h6>
+			<div class="card-block"></div>
+			<img class="card-img-top img-responsive photo" src="{{ user.photoUrl }}">
+			<div class="card-block">
+				<h4 class="card-title">{{ user.name }}</h4>
+				<p class="card-text">{{ user.email }}</p>
+			</div>
+			<div class="card-block">
+				<button class="btn btn-danger" (click)="signOut()">Sign out</button>
+			</div>
+		</div> -->
+	</div>
+</div>

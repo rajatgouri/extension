@@ -1,0 +1,32 @@
+
+.list-custom-ang {
+    padding: 0 20px;
+}
+
+.table.table-condensed th {
+    font-size: 11px;
+}
+
+.table.table-condensed td {
+    font-size: 10px;
+}
+.list-custom-ang input{
+        font-size: 10px;
+        padding: 0 10px;
+        height: 26px;    
+}
+
+.plus-custom-ang{
+    margin-top: 17px;
+}
+
+.plus-custom-ang i {
+    font-size: 17px;
+    padding: 0;
+}
+
+.content {
+    min-height: 294px!important;
+    overflow: scroll!important;
+    max-height: 550px!important;
+}

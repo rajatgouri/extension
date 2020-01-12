@@ -1,0 +1,28 @@
+ul.footer-menu li a {
+    color: #fff;
+}
+
+ul.footer-menu li {
+    list-style: none;
+    width: 23.33%;
+    display: inline-block;
+    text-align: center;
+}
+
+ul.footer-menu {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.footer-bar {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 0;
+    padding: 7px 0;
+    background: #1a1a1a;    
+    max-width: 560px;
+}
+.footer-menu li{
+    cursor: pointer;
+}

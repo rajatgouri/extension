@@ -1,0 +1,50 @@
+<div class="boxed adduser">
+    <div class="container">
+      <div class="content">
+        <ngx-spinner bdOpacity=0.9 bdColor="rgba(51,51,51,0.3)" size="medium" color="#f6cb1e" type="square-spin"
+            [fullScreen]="true">
+            <p style="color: white"> Loading... </p>
+        </ngx-spinner>
+        <app-adminheader></app-adminheader>
+        <div class="list-custom-ang">
+            <div class="form-group">
+                <input type="text" name="Search" placeholder="Search" class="form-control" [(ngModel)]="Search">
+            </div>
+            <div class="form-group second-cu-ang user_list">
+                <ngx-select-dropdown (change)="selectionChanged($event)" [config]="config" [options]="dropdownOptions"
+                    [(ngModel)]="dataModel" [multiple]="false"></ngx-select-dropdown>
+            </div>
+            <div class="plus-custom-ang">
+                <a [routerLink]="" (click)="addUser()" tooltip="Add Users" placement="top" class="text-secondary"><i
+                        class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div>
+            <table class="table table-condensed">
+                <thead style="text-align: center;">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody style="text-align: center;">
+                    <ng-container *ngFor="let user of userList| filter : Search | userSearch:dataModel;let i=index">
+                        <tr *ngIf="user.role == 'user'">
+                            <td>{{user.fullName}}</td>
+                            <td>{{user.email}}</td>
+                            <td><a [routerLink]="" (click)="editUser('edit',user)" tooltip="Click to edit the user"><i class="fa fa-pencil-square-o"
+                                        aria-hidden="true"></i></a></td>
+                            <td><a [routerLink]="" (click)="deleteUser(user)" tooltip="Click to delete the user"><i class="fa fa-trash"
+                                        aria-hidden="true"></i></a></td>
+                        </tr>
+                    </ng-container>
+
+                </tbody>
+            </table>
+        </div>
+        <app-footerbar></app-footerbar>
+        </div>
+    </div>
+</div>
